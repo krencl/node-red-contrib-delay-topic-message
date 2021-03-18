@@ -1,11 +1,12 @@
 {
 	"name": "node-red-contrib-delay-topic-message",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Node-red node for delaying message for topic",
 	"keywords": [
 		"node-red",
 		"timer",
-		"delay"
+		"delay",
+		"countdown"
 	],
 	"repository": "https://github.com/krencl/node-red-contrib-delay-topic-message",
 	"author": "krencl",

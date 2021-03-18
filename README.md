@@ -1,5 +1,22 @@
 # Node-red node delay-topic-message
 
-Delay message by set seconds.
-
-When received `msg` with same `topic`, timer is reset and previous message is discarded.
+<p>
+    <strong>Basic usage</strong>
+</p>
+<p>
+    Delay message by set seconds.
+</p>
+<p>
+    When received <code>msg</code> with same <code>topic</code>, timer is reset and previous message is discarded.
+</p>
+<p>
+    <strong>Message options</strong>
+</p>
+<ul>
+    <li>
+        <code>msg.stopTimer</code>: If set to <code>true</code>, timer is stopped and message in <code>topic</code> is discarded.
+    </li>
+    <li>
+        <code>msg.delay</code>: Overrides default delay in timer.
+    </li>
+</ul>
