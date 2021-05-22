@@ -21,12 +21,12 @@ module.exports = function(RED) {
 			if (node.messages[topic]) {
 				node.messagesCount--;
 				clearTimeout(node.messages[topic].timeout);
+			}
 
-				if (msg.stopTimer && msg.stopTimer === true) {
-					delete node.messages[topic];
-					updateStatus(node);
-					return;
-				}
+			if (msg.stopTimer && msg.stopTimer === true) {
+				delete node.messages[topic];
+				updateStatus(node);
+				return;
 			}
 
 			node.messagesCount++;
