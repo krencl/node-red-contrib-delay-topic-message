@@ -14,6 +14,7 @@ module.exports = function(RED) {
 		node.delay = config.delay;
 		node.messages = {};
 		node.messagesCount = 0;
+		updateStatus(node);
 
 		node.on('input', function (msg) {
 			var topic = msg.topic || '__notopic';
