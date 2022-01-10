@@ -7,7 +7,7 @@
     Delay message by set seconds.
 </p>
 <p>
-    When received <code>msg</code> with same <code>topic</code>, timer is reset and previous message is discarded (delivered is last message in <code>topic</code> only).
+    When received <code>msg</code> with same <code>topic</code>, timer is reset and previous message is discarded (delivered is last message in <code>topic</code> within timer only).
 </p>
 <p>
     <strong>Message options</strong>
