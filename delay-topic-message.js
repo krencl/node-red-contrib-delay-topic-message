@@ -7,17 +7,34 @@ module.exports = function(RED) {
 		});
 	}
 
-	function delayTimer(config) {
-		RED.nodes.createNode(this, config);
-
-		var node = this;
-		node.delay = config.delay;
+	function resetNode(node) {
 		node.messages = {};
 		node.messagesCount = 0;
 		updateStatus(node);
+	}
+
+	function resetTimeouts(node) {
+		for (let topic in node.messages) {
+			clearTimeout(node.messages[topic].timeout);
+			delete node.messages[topic];
+		}
+	}
+
+	function delayTimer(config) {
+		RED.nodes.createNode(this, config);
+
+		let node = this;
+		resetNode(node);
+		node.delay = config.delay;
 
 		node.on('input', function (msg) {
-			var topic = msg.topic || '__notopic';
+			if (msg.stopAll && msg.stopAll === true) {
+				resetTimeouts(node);
+				resetNode(node);
+				return;
+			}
+
+			let topic = msg.topic || '__notopic';
 
 			if (node.messages[topic]) {
 				node.messagesCount--;

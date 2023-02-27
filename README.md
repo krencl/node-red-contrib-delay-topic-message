@@ -19,4 +19,7 @@
     <li>
         <code>msg.delay</code>: Overrides default delay in timer.
     </li>
+    <li>
+        <code>msg.stopAll</code>: If set to <code>true</code>, all timers and messages, regardless of topic, are discarded.
+    </li>
 </ul>
